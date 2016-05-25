@@ -18,19 +18,26 @@
   <h1>Wikipedia Category Search</h1>
 
 	<div ng-controller="wcsSearchBar as ctrl">
-		<form ng-submit="ctrl.search()">
-  		<input id="search-input" placeholder="Enter a Wikipedia category" ng-model="ctrl.cat">
-  		<button type="submit">Get Categories</button>
-		</form>
-		<br>
-		<h4 ng-repeat="category in ctrl.results" ng-click="ctrl.showList(category)">
-			{{category.title}}
-			<div ng-if="category.expanded">
-				<h6 ng-repeat="page in category.pageList">
-					<a href="{{page.fullurl}}">{{page.title}}</a>
-				</h6>
+		<div id="search-bar">
+			<form ng-submit="ctrl.search()">
+	  		<input id="search-input" placeholder="Enter a Wikipedia category" ng-model="ctrl.cat">
+	  		<button type="submit">Get Categories</button>
+			</form>
+			<br>
+		</div>
+
+		<div id="search-results">
+			<div ng-repeat="category in ctrl.results" ng-click="ctrl.showList(category)" class="category">
+				<h4>
+					{{category.title}}
+				</h4>
+				<div ng-if="category.expanded" class="page-list">
+					<div ng-repeat="page in category.pageList" class="page">
+						<a href="{{page.fullurl}}">{{page.title}}</a>
+					</div>
+				</div>
 			</div>
-		</h4>
+		</div>
 	</div>
 
 
