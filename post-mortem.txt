@@ -1,0 +1,20 @@
+to setup: npm install
+to run: node server.js
+        navigate a browser to localhost:####
+to test: npm test
+
+
+time spent: ~3 hours
+
+
+resources used:
+  -stack overflow
+  -angular docs
+  -karma/jasmine docs
+
+things I would have liked to add:
+  -better angular practices (factories/directives)
+  -better file structure
+  -pagination of results
+  -more css/styling
+  -error feedback (i.e. when a search has no results)
