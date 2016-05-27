@@ -20,7 +20,7 @@ function wcsSearchBar($http) {
     })
     .then(function(res) {
       vm.results = res.data;
-      vm.cat = '';
+      //vm.cat = '';
     });
   };
 

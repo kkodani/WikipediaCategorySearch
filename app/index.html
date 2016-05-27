@@ -19,8 +19,12 @@
 
 	<div ng-controller="wcsSearchBar as ctrl">
 		<div id="search-bar">
-			<form ng-submit="ctrl.search()">
-	  		<input id="search-input" placeholder="Enter a Wikipedia category" ng-model="ctrl.cat">
+			<form>
+	  		<input id="search-input"
+							 placeholder="Enter a Wikipedia category"
+							 ng-model="ctrl.cat"
+							 ng-model-options="{debounce: 500}"
+							 ng-change="ctrl.search()">
 	  		<button type="submit">Get Categories</button>
 			</form>
 			<br>
