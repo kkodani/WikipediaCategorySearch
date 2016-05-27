@@ -26,6 +26,10 @@ function wcsSearchBar($http) {
 
   vm.showList = function(category) {
 
+    if(category.title === 'No Results') {
+      return;
+    }
+
     if(category.expanded) {
       category.expanded = !category.expanded;
     }

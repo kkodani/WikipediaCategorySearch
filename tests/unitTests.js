@@ -7,7 +7,7 @@ describe('unit tests', function() {
   beforeEach(inject(function($rootScope, $controller) {
     scope = $rootScope.$new();
     ctrl = $controller('wcsSearchBar', {
-      //$scope: scope,
+      
     });
   }));
 

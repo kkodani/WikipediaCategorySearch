@@ -20,7 +20,7 @@ app.post('/api/search', function (req, res) {
       console.error(error);
     }
     else if(!cats.query) {
-      console.error('no results');
+      res.status(200).send({1: {title: 'No Results'}});
     }
     else {
       res.status(200).send(cats.query.pages);
@@ -37,7 +37,7 @@ app.post('/api/list', function (req, res) {
       console.error(error);
     }
     else if(!list.query) {
-      console.error('no results');
+      res.status(200).send({1: {title: 'No Pages'}});
     }
     else {
       res.status(200).send(list.query.pages);

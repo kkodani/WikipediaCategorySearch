@@ -1,7 +1,37 @@
+body {
+  font-family: sans-serif;
+}
+
+.category-title {
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+}
+
+.category-title:hover {
+  background-color: lightgrey;
+}
+
 .page-list {
   margin-left: 20px;
 }
 
+.page {
+  color: #0645ad;
+}
+
+#title {
+  text-align: center;
+}
+
+#search-bar {
+  text-align: center;
+}
+
 #search-input {
   width: 30%;
+}
+
+#search-results {
+  margin-left: 30%;
 }

@@ -15,7 +15,7 @@
 
 <body ng-app="wcs">
 
-  <h1>Wikipedia Category Search</h1>
+  <h1 id="title">Wikipedia Category Search</h1>
 
 	<div ng-controller="wcsSearchBar as ctrl">
 		<div id="search-bar">
@@ -27,13 +27,23 @@
 		</div>
 
 		<div id="search-results">
-			<div ng-repeat="category in ctrl.results" ng-click="ctrl.showList(category)" class="category">
-				<h4>
-					{{category.title}}
+			<div ng-repeat="category in ctrl.results" class="category">
+				<h4 ng-if="category.title !== 'No Results'" ng-click="ctrl.showList(category)" class="category-title">
+					{{category.title.slice(9)}}
+				</h4>
+				<h4 ng-if="category.title === 'No Results'">
+					No Results
 				</h4>
 				<div ng-if="category.expanded" class="page-list">
-					<div ng-repeat="page in category.pageList" class="page">
-						<a href="{{page.fullurl}}">{{page.title}}</a>
+					<div ng-repeat="page in category.pageList">
+						<p ng-if="page.title === 'No Pages'">
+							No Pages
+						</p>
+						<p>
+							<a ng-if="page.title !== 'No Pages'" href="{{page.fullurl}}" class="page">
+								-{{page.title}}
+							</a>
+						</p>
 					</div>
 				</div>
 			</div>
